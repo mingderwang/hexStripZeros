@@ -9,6 +9,10 @@ describe('hexStripZeros', () => {
     expect(hexStripZeros('0x1234')).toBe('0x1234');
   });
 
+  it('should handle 0x hex values', () => {
+    expect(hexStripZeros('0x')).toBe('0x');
+  });
+
   it('should handle single-digit hex values', () => {
     expect(hexStripZeros('0x0')).toBe('0x');
     expect(hexStripZeros('0x1')).toBe('0x1');
@@ -16,6 +20,6 @@ describe('hexStripZeros', () => {
 
   it('should throw an error for invalid hex strings', () => {
     expect(() => hexStripZeros('1234')).toThrow('Invalid hexadecimal string');
-    expect(() => hexStripZeros('0x')).toThrow('Invalid hexadecimal string');
+    expect(() => hexStripZeros('0')).toThrow('Invalid hexadecimal string');
   });
 });
