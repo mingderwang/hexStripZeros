@@ -6,6 +6,7 @@ describe('hexStripZeros', () => {
   it('should remove leading zeros from a hex string', () => {
     expect(hexStripZeros('0x00001234')).toBe('0x1234');
     expect(hexStripZeros('0x0000')).toBe('0x');
+    expect(hexStripZeros('0x0000000000000000000000000000000000000000')).toBe('0x');
     expect(hexStripZeros('0x1234')).toBe('0x1234');
   });
 
